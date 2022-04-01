@@ -26,6 +26,6 @@ jobs:
           context: ./src
           file: ./src/Dockerfile
           push: true
-          tags:
+          tags: |
             lguarise/rotten-potatoes:latest
             lguarise/rotten-potatoes:${{github.run_number}}
