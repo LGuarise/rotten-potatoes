@@ -30,6 +30,7 @@ jobs:
             lguarise/rotten-potatoes:latest
             lguarise/rotten-potatoes:${{github.run_number}}
   CD:
+    needs: [CI]
     runs-on: ubuntu-latest
     
     steps:
@@ -37,7 +38,8 @@ jobs:
         
         - name: Kubernetes Set Context
           uses: Azure/k8s-set-context@v2
-          method: kubeconfig
-          kubeconfig: ${{secrets.KUBECONFIG}}
+          with:
+            method: kubeconfig
+            kubeconfig: ${{secrets.KUBECONFIG}}
         
     
