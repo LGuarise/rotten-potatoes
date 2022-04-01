@@ -28,4 +28,4 @@ jobs:
           push: true
           tags:
             lguarise/rotten-potatoes:latest
-            lguarise/rotten-potatoes:${{github_run_number}}
+            lguarise/rotten-potatoes:${{ github_run_number }}
